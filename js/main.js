@@ -16,7 +16,8 @@ alert("El primer dígito de la siguiente cifra es el número que escogiste, y la
 
 //Desafio Clase 03 - Loops
 
-let planeta = prompt("Ingrese un planeta").toLowerCase();
+/* let planeta = prompt("Ingrese un planeta").toLowerCase();
+
 
 while (planeta != "esc") {
     switch (planeta) {
@@ -49,4 +50,27 @@ while (planeta != "esc") {
             break;
     }
     planeta = prompt("Ingrese otro planeta").toLowerCase(); 
+} */
+
+
+//Desafio clase 04 - Funciones
+
+let numero = prompt("Elija un número del 1 al 9 : ");
+let año = prompt("Escriba su año de nacimiento :")
+let cumple = prompt("¿ Tu cumpleaños ya ha pasado este año ?")
+
+if (cumple == "si") {
+    cumple = 1771
+} else {
+    cumple = 1770
 }
+
+let edad = 0;
+
+function calcular(numero, año, cumple) {
+    edad = (((numero * 2) + 5) * 50 + cumple) - año;
+}
+
+calcular(numero, año, cumple)
+
+alert(`El primer dígito de la siguiente cifra es el número que escogiste, y las siguientes dos cifras indican tu edad: ${edad}`);
