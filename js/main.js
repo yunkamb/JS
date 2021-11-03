@@ -55,7 +55,7 @@ while (planeta != "esc") {
 
 //Desafio clase 04 - Funciones
 
-let numero = prompt("Elija un número del 1 al 9 : ");
+/* let numero = prompt("Elija un número del 1 al 9 : ");
 let año = prompt("Escriba su año de nacimiento :")
 let cumple = prompt("¿ Tu cumpleaños ya ha pasado este año ?")
 
@@ -73,4 +73,49 @@ function calcular(numero, año, cumple) {
 
 calcular(numero, año, cumple)
 
-alert(`El primer dígito de la siguiente cifra es el número que escogiste, y las siguientes dos cifras indican tu edad: ${edad}`);
+alert(`El primer dígito de la siguiente cifra es el número que escogiste, y las siguientes dos cifras indican tu edad: ${edad}`); */
+
+
+//Clase 4 - Desafio complementario
+
+/* let precio = parseInt(prompt("Ingrese el valor de su producto"));
+
+const iva = (valor) => impuesto = valor * 0.21;
+
+const total = (precio, iva) => parseInt(nuevoPrecio = precio + iva);
+
+const nuevoValor = () => alert(`El valor de su compra con impuestos es de ${nuevoPrecio}`);
+
+
+iva(precio)
+total(precio, impuesto)
+nuevoValor()  */
+
+//Desafio 05 - Objetos
+
+class Producto {
+    constructor(nombre, precio) {
+        this.nombre = nombre.toUpperCase();
+        this.precio = parseInt(precio);
+    }
+    sumarIva() {
+        this.precio = this.precio * 1.21;
+    }
+    nuevoValor() {
+        alert(`El valor de ${this.nombre} con impuestos es de $${this.precio}`);
+    }
+}
+
+const producto1 = new Producto("arroz", "60");
+const producto2 = new Producto("fideos", "75");
+const producto3 = new Producto("lentejas", "100")
+
+
+producto1.sumarIva();
+producto1.nuevoValor();
+
+producto2.sumarIva();
+producto2.nuevoValor();
+
+producto3.sumarIva();
+producto3.nuevoValor();
