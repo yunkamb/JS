@@ -55,7 +55,7 @@ while (planeta != "esc") {
 
 //Desafio clase 04 - Funciones
 
-let numero = prompt("Elija un número del 1 al 9 : ");
+/* let numero = prompt("Elija un número del 1 al 9 : ");
 let año = prompt("Escriba su año de nacimiento :")
 let cumple = prompt("¿ Tu cumpleaños ya ha pasado este año ?")
 
@@ -73,4 +73,4 @@ function calcular(numero, año, cumple) {
 
 calcular(numero, año, cumple)
 
-alert(`El primer dígito de la siguiente cifra es el número que escogiste, y las siguientes dos cifras indican tu edad: ${edad}`);
+alert(`El primer dígito de la siguiente cifra es el número que escogiste, y las siguientes dos cifras indican tu edad: ${edad}`); */
