@@ -24,8 +24,10 @@ while (continuar === "s") {
 console.log(arrayUsuarios);
 
 
-let preview = prompt("¿Desea visualizar su información?(s/n)")
+/* let preview = prompt("¿Desea visualizar su información?(s/n)")
 
 if (preview === s) {
-    document.write(arrayUsuarios[0])
-}
+    document.write(`Bienvenido ${arrayUsuarios.nombre[0]}`)
+} */
+/* 
+alert(`Bienvenido ${arrayUsuarios.nombre[0]}`) */
