@@ -14,8 +14,8 @@ while (continuar === "s") {
     let nombre = prompt("Ingrese su nombre");
     let apellido = prompt("Ingrese su apellido");
     let edad = parseInt(prompt("Ingrese su edad"));
-    
-    let nuevoUsuario = new Usuario (nombre, apellido, edad);
+
+    let nuevoUsuario = new Usuario(nombre, apellido, edad);
     arrayUsuarios.push(nuevoUsuario);
 
     continuar = prompt("¿Desea ingresar otro usuario? (s/n)");
@@ -24,10 +24,27 @@ while (continuar === "s") {
 console.log(arrayUsuarios);
 
 
-/* let preview = prompt("¿Desea visualizar su información?(s/n)")
+let preview = prompt("¿Desea visualizar su información?(s/n)")
 
-if (preview === s) {
-    document.write(`Bienvenido ${arrayUsuarios.nombre[0]}`)
-} */
-/* 
-alert(`Bienvenido ${arrayUsuarios.nombre[0]}`) */
+let i = 0;
+
+function increaseNumber() {
+    i += 1;
+}
+
+
+while (preview === "s") {
+    alert(`Bienvenido ${arrayUsuarios[i].nombre} ${arrayUsuarios[i].apellido} de ${arrayUsuarios[i].edad} años de edad`)
+    if (preview === "n") {
+        alert("Muchas gracias por utilizar nuestra pagina");
+        break
+    }
+    preview = prompt("¿Desea visualizar otro usuario? (s/n)");
+
+    do {
+        increaseNumber();
+    } while (i < arrayUsuarios.lenght);
+}
+
+
+alert("Muchas gracias por utilizar nuestra pagina");
