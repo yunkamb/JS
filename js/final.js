@@ -26,25 +26,20 @@ console.log(arrayUsuarios);
 
 let preview = prompt("¿Desea visualizar su información?(s/n)")
 
-let i = 0;
-
-function increaseNumber() {
-    i += 1;
-}
-
-
-while (preview === "s") {
-    alert(`Bienvenido ${arrayUsuarios[i].nombre} ${arrayUsuarios[i].apellido} de ${arrayUsuarios[i].edad} años de edad`)
-    if (preview === "n") {
-        alert("Muchas gracias por utilizar nuestra pagina");
-        break
+if (preview == 'n') {
+    alert("Muchas gracias por utilizar nuestra pagina");
+} else {
+    for (let i = 0; i < arrayUsuarios.length; i++) {
+        alert(`Bienvenido ${arrayUsuarios[i].nombre} ${arrayUsuarios[i].apellido} de ${arrayUsuarios[i].edad} años de edad`)
     }
-    preview = prompt("¿Desea visualizar otro usuario? (s/n)");
-
-    do {
-        increaseNumber();
-    } while (i < arrayUsuarios.lenght);
 }
+
+function cantidadUsuarios(a) {
+    usuariosCreados = a;
+    alert(`Has creado ${usuariosCreados} usuarios.`);
+}
+
+cantidadUsuarios(arrayUsuarios.length);
 
 
 alert("Muchas gracias por utilizar nuestra pagina");
