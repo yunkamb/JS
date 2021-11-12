@@ -29,7 +29,7 @@ let preview = prompt("¿Desea visualizar su información?(s/n)")
 if (preview == 'n') {
     alert("Muchas gracias por utilizar nuestra pagina");
 } else {
-    for (let i = 0; i < arrayUsuarios.length; i++) {
+    for (let i = 0; i < arrayUsuarios.length; i+=1) {
         alert(`Bienvenido ${arrayUsuarios[i].nombre} ${arrayUsuarios[i].apellido} de ${arrayUsuarios[i].edad} años de edad`)
     }
 }
