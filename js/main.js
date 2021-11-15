@@ -15,3 +15,4 @@ cumple.addEventListener('change', function () {
 
 function calcularResultado() {
     console.log(`${numero}, ${año}, ${cumple}`)
+}
