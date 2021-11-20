@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+    background: url(../images/bg.jpg);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    color: white;
+    font-family: 'Play', sans-serif;
+}
+
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.navBar ul li {
+    padding: 1rem;
+}
