@@ -12,16 +12,29 @@
 </head>
 
 <body>
+    <h1>Segunda Entrega Final</h1>
+    <form autocomplete="off" id="myForm">
+        <div>
+            <label for="nombre">Ingrese su nombre :</label>
+            <input type="text" name="nombre" id="nombre">
+        </div>
+        <div>
+            <label for="apellido">Ingrese su apellido :</label>
+            <input type="text" name="apellido" id="apellido">
+        </div>
+        <div>
+            <label for="edad">Ingrese su edad :</label>
+            <input type="number" name="edad" id="edad">
+        </div>
+        <div>
+            <input type="button" value="Añadir usuario" onclick="añadirUsuario()">
+        </div>
+        <div>
+            <input type="button" value="Mostrar usuarios creados" name="json" id="json">
+        </div>
+    </form>
+    <p id="usuariosCreados" class="usuarios"></p>
 
-
-
-
-
-
-
-
-
-    
 </body>
 
 </html>
