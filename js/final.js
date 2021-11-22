@@ -1,26 +1,8 @@
-/* const productos = [{ id: 1,  producto: "Arroz", precio: 125 },
-                  {  id: 2,  producto: "Fideo", precio: 70 },
-                  {  id: 3,  producto: "Pan"  , precio: 50},
-                  {  id: 4,  producto: "Flan" , precio: 100}];
-
-const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
-
-//Almacenar producto por producto
-for (const producto of productos) {
-    guardarLocal(producto.id, JSON.stringify(producto));
-}
-// o almacenar array completo
-guardarLocal("listaProductos", JSON.stringify(productos));
-
-let datos = localStorage.getItem("listaProductos");
-let obj = JSON.parse(datos);
-
- */
-
 let usuariosCreados = document.querySelector("#usuariosCreados");
 let usuariosListas = document.querySelectorAll("ul");
 let numeroUsuario = 0;
 let mostrarUsuarios = document.querySelector("#json")
+let usuarioAdded = document.querySelector(".usuarioAdded")
 const arrayUsuarios = [];
 const removeAllChildNodes = (parent) => {
     while (parent.firstChild) {
@@ -46,6 +28,7 @@ const añadirUsuario = () => {
     arrayUsuarios.push(nuevoUsuario);
     console.log(arrayUsuarios);
     storageTest();
+    $('.usuarioAdded').finish().fadeIn("fast").delay(1000).fadeOut("slow");
 }
 
 const storageTest = () => {
