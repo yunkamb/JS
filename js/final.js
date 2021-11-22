@@ -18,9 +18,15 @@ let obj = JSON.parse(datos);
  */
 
 let usuariosCreados = document.querySelector("#usuariosCreados");
-const arrayUsuarios = [];
+let usuariosListas = document.querySelectorAll("ul");
 let numeroUsuario = 0;
-let i = 0;
+let mostrarUsuarios = document.querySelector("#json")
+const arrayUsuarios = [];
+const removeAllChildNodes = (parent) => {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
 class Usuario {
     constructor(numero, nombre, apellido, edad) {
@@ -36,7 +42,6 @@ const añadirUsuario = () => {
     let nombre = document.querySelector("#nombre").value;
     let apellido = document.querySelector("#apellido").value;
     let edad = Number(document.querySelector("#edad").value);
-
     let nuevoUsuario = new Usuario(numero, nombre, apellido, edad);
     arrayUsuarios.push(nuevoUsuario);
     console.log(arrayUsuarios);
@@ -49,19 +54,24 @@ const storageTest = () => {
 }
 
 
-const showJSON = document.querySelector("#json");
-
-let mostrarUsuarios = document.querySelector("#json")
+const loopArray = () => {
+    for (let i = 0; i < infoUsuarios.length; i += 1) {
+        ul = document.createElement('ul');
+        ul.style.backgroundColor = "#c53b1c41";
+        ul.id = 'usuariosLista';
+        ul.className = 'usuariosListaClass';
+        ul.innerHTML = `<h2>Usuario N°${infoUsuarios[i].numero}</h2> <li>Nombre: ${infoUsuarios[i].nombre}</li> <li>Apellido: ${infoUsuarios[i].apellido}</li> <li>Edad: ${infoUsuarios[i].edad}</li>`;
+        usuariosCreados.appendChild(ul);
+    }
+}
 
 mostrarUsuarios.addEventListener('click', function () {
     archivoJSON = localStorage.getItem("infoUsuarios");
     infoUsuarios = JSON.parse(archivoJSON);
-    for (let i = 0; i < infoUsuarios.length; i += 1) {
-        div = document.createElement('div');
-        div.style.backgroundColor = "#c53b1c41";
-        div.id = 'usuariosCreados';
-        div.className = 'usuarios';
-        div.innerHTML = `Usuario N°${infoUsuarios[i].numero} Nombre: ${infoUsuarios[i].nombre} Apellido: ${infoUsuarios[i].apellido} Edad: ${infoUsuarios[i].edad}`;
-        document.body.appendChild(div);
+    if (usuariosCreados.innerHTML == ""){
+        loopArray();
+    }else {
+        removeAllChildNodes(usuariosCreados);
+        loopArray();
     }
 });

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 
 html {
@@ -20,14 +21,23 @@ h1 {
 }
 
 .usuarios {
-    display: flex;
-    margin: 2rem;
-    padding: 1rem;
-    width: 25vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+h2 {
     text-align: center;
+    font-size: 3.5rem;
+}
+.usuarios ul {
+    text-align: left;
+    padding: 1rem;
     font-size: 3rem;
     border-radius: 2.5rem;
 }
+
 
 
 form {
