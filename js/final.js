@@ -44,7 +44,7 @@ const loopArray = () => {
         ul.id = 'usuariosLista';
         ul.className = 'usuariosListaClass';
         ul.innerHTML = `<h2>Usuario N°${infoUsuarios[i].numero}</h2> <li>Nombre: ${infoUsuarios[i].nombre}</li> <li>Apellido: ${infoUsuarios[i].apellido}</li> <li>Edad: ${infoUsuarios[i].edad}</li>`;
-        usuariosCreados.appendChild(ul);
+        usuariosCreados.appendChild(ul); 
     }
 }
 
