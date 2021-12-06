@@ -1,8 +1,12 @@
 let usuariosCreados = document.querySelector("#usuariosCreados");
 let usuariosListas = document.querySelectorAll("ul");
 let numeroUsuario = 0;
-let mostrarUsuarios = document.querySelector("#json")
-let usuarioAdded = document.querySelector(".usuarioAdded")
+let mostrarUsuarios = document.querySelector("#json");
+let usuarioAdded = document.querySelector(".usuarioAdded");
+let addUser = document.querySelector("#addUser");
+let myForm = document.querySelector("#myForm");
+var allInputs = myForm.querySelectorAll('input');
+
 const arrayUsuarios = [];
 const removeAllChildNodes = (parent) => {
     while (parent.firstChild) {
@@ -23,15 +27,16 @@ const añadirUsuario = () => {
     let numero = ++numeroUsuario;
     let nombre = document.querySelector("#nombre").value;
     let apellido = document.querySelector("#apellido").value;
-    let edad = Number(document.querySelector("#edad").value);
+    let edad = parseInt(document.querySelector("#edad").value);
     let nuevoUsuario = new Usuario(numero, nombre, apellido, edad);
     arrayUsuarios.push(nuevoUsuario);
     console.log(arrayUsuarios);
-    storageTest();
+    storageForm();
     $('.usuarioAdded').finish().fadeIn("fast").delay(1000).fadeOut("slow");
+    document.querySelector("#myForm").reset();
 }
 
-const storageTest = () => {
+const storageForm = () => {
     let guardarArray = JSON.stringify(arrayUsuarios);
     localStorage.setItem("infoUsuarios", guardarArray);
 }
@@ -44,17 +49,28 @@ const loopArray = () => {
         ul.id = 'usuariosLista';
         ul.className = 'usuariosListaClass';
         ul.innerHTML = `<h2>Usuario N°${infoUsuarios[i].numero}</h2> <li>Nombre: ${infoUsuarios[i].nombre}</li> <li>Apellido: ${infoUsuarios[i].apellido}</li> <li>Edad: ${infoUsuarios[i].edad}</li>`;
-        usuariosCreados.appendChild(ul); 
+        usuariosCreados.appendChild(ul);
     }
 }
 
 mostrarUsuarios.addEventListener('click', function () {
     archivoJSON = localStorage.getItem("infoUsuarios");
     infoUsuarios = JSON.parse(archivoJSON);
-    if (usuariosCreados.innerHTML == ""){
+    if (usuariosCreados.innerHTML == "") {
         loopArray();
-    }else {
+    } else {
         removeAllChildNodes(usuariosCreados);
         loopArray();
     }
 });
+
+function submitCancel() { {
+        if (myForm[0].value == "") {
+            $(".emptyForm").finish().fadeIn("fast").delay(1000).fadeOut("slow");
+        } else {
+            añadirUsuario();
+        }
+    }
+}
+
+let myRequest = new XMLHttpRequest();

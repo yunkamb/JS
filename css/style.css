@@ -24,6 +24,10 @@ h1 {
     display: none;
 }
 
+.emptyForm {
+    display: none;
+}
+
 
 .usuarios {
     display: grid;
