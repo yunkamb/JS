@@ -73,4 +73,17 @@ function submitCancel() { {
     }
 }
 
+let footerContainer = document.querySelector("#footer")
 let myRequest = new XMLHttpRequest();
+myRequest.open('GET', 'https://myjson.dit.upm.es/api/bins/f1fz');
+myRequest.onload = function() {
+    let myData = JSON.parse(myRequest.responseText);
+    renderHTML(myData);
+};
+myRequest.send();
+
+function renderHTML(data) {
+    let htmlString = `<h2>Pagina creada por:</h2> <p>${data[0].nombre} ${data[0].apellido}</p> <p>${data[0].mail}</p>`
+    footerContainer.insertAdjacentHTML('beforeend', htmlString);
+
+}

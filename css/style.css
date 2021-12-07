@@ -61,3 +61,16 @@ form {
 form label {
     padding-right: 2rem;
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b504555;
+    color: #FAEBD7;
+    font-size: 3rem;
+    margin-block: 3rem;
+    padding-block: 1rem;
+    gap: 1rem;
+}
