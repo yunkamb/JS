@@ -1,44 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/final.js"></script>
-    <title>Document</title>
+    <title>Color Game</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
-    <header></header>
+    <h1>Adivina el color <span id="color-display">RGB</span></h1>
+    <div id="stripe">
+        <button id="reset">Nueva partida</button>
+        <span id="message"></span>
+        <button class="mode">Facil</button>
+        <button class="mode selected">Normal</button>
+        <button class="mode">Dificil</button>
+    </div>
+    <div id="container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
 
-    
-    <nav class="navBar">
-        <ul class="navPlanets">
-            <li>Mercurio</li>
-            <li>Venus</li>
-            <li>Tierra</li>
-            <li>Marte</li>
-            <li>Júpiter</li>
-            <li>Saturno</li>
-            <li>Urano</li>
-            <li>Neptuno</li>
-            <li>Plutón</li>
-        </ul>
-    </nav>
-
-
-    <footer></footer>
-
-
-
-
-
-
-
-
-    
+    <script type="text/javascript" src="js/final.js"></script>
 </body>
 
 </html>

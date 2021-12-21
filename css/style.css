@@ -1,27 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Space+Mono&display=swap');
+/*     font-family: 'Play', sans-serif;
+       font-family: 'Space Mono', monospace;
+*/
+
 * {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    list-style: none;
+    border: 0px solid blue;
 }
 
-html {
-    font-size: 62.5%;
-    background: url(../images/bg.jpg);
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    color: white;
+body {
+    background-color: #232323;
     font-family: 'Play', sans-serif;
+    font-size: 62.5%;
+    height: 75vh;
 }
 
-.navBar {
+#container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 600px;
+    margin-inline: 33.3%;
+    padding-top: 2rem;
 }
 
-.navBar ul li {
-    padding: 1rem;
+.item {
+    width: 30%;
+    padding-bottom: 30%; 
+    margin-bottom: 2%;
+    position: relative;
+  }
+.square {
+    width: 32%;
+    padding-bottom: 32%; 
+    margin-bottom: 2%;
+    transition: background .5s;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
 }
+
+h1 {
+    height: 20vh;
+    color: black;
+    background-color: #232323;
+    font-size: 3.5em;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 2rem 0;
+}
+
+#color-display {
+    display: block;
+    font-size: 2em;
+}
+
+#stripe {
+    background: #d1d2cd;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+
+#message {
+    font-family: 'Play', sans-serif;
+    text-transform: uppercase;
+    color: #232323;
+    font-size: 1.5rem;
+    display: inline-block;
+    width: 20%;
+}
+
+button {
+    outline: none;
+    color: #232323;
+    font-family: 'Play', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    background-color: #d1d2cd;
+    height: 100%;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #232323;
+    color: d1d2cd;
+}
+
+.selected {
+    background-color: #232323;
+    color: #d1d2cd;
+}
+
+.square {
+    border-radius: 20%;
+}
+
