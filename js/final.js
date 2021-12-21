@@ -1,4 +1,4 @@
-let numSquares = 9;
+let numSquares = 6;
 let colors = [];
 let pickedColor;
 
