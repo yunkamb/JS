@@ -3,12 +3,11 @@ let colors = [];
 let pickedColor;
 
 let squares = document.querySelectorAll(".square");
-let colorDisplay = document.querySelector("#color-display");
+let colorDisplay = document.querySelector("#colorDisplay");
 let messageDisplay = document.querySelector("#message");
 let h1 = document.querySelector("h1");
 let resetButton = document.querySelector("#reset");
 let modeButtons = document.querySelectorAll(".mode");
-let easyButton = document.querySelector(".mode");
 
 init();
 
@@ -23,6 +22,8 @@ resetButton.addEventListener("click", function () {
     reset();
 });
 
+
+/* Generador de color RGB random */
 function makeColor() {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
@@ -30,14 +31,16 @@ function makeColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
+/* Crear y pushear cantidad de colores asignados a un array */
 function genRandomColors(num) {
-    let array = [];
+    let randomColor = [];
     for (let i = 0; i < num; i += 1) {
-        array.push(makeColor());
+        randomColor.push(makeColor());
     }
-    return array;
+    return randomColor;
 }
 
+/* Cambia color de fondo de cuadrados y título al del color correcto cuando se elige. */
 function changeColors(color) {
     for (let i = 0; i < squares.length; i += 1) {
         squares[i].style.backgroundColor = color;
@@ -45,11 +48,31 @@ function changeColors(color) {
     }
 }
 
+/* Elige color ganador */
 function chooseColor() {
     let random = Math.floor(Math.random() * colors.length);
     return colors[random];
 }
 
+/* Resetea la pantalla de victoria al default */
+function reset() {
+    colors = genRandomColors(numSquares);
+    pickedColor = chooseColor();
+    colorDisplay.textContent = pickedColor;
+    h1.style.backgroundColor = "#d1d2cd";
+    resetButton.textContent = "Reiniciar colores";
+    messageDisplay.textContent = "";
+    for (let i = 0; i < squares.length; i += 1) {
+        if (colors[i]) {
+            squares[i].style.display = "block";
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].style.display = "none";
+        }
+    }
+}
+
+/* Prepara los cuadrados con los colores randomizados */
 function setupSquares() {
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colors[i];
@@ -67,6 +90,7 @@ function setupSquares() {
     }
 }
 
+/* Cambia la dificultad del juego agregando o quitando cuadrados */
 function setupMode() {
     for (let i = 0; i < modeButtons.length; i++) {
         modeButtons[i].addEventListener("click", function () {
@@ -86,19 +110,3 @@ function setupMode() {
     }
 }
 
-function reset() {
-    colors = genRandomColors(numSquares);
-    pickedColor = chooseColor();
-    colorDisplay.textContent = pickedColor;
-    h1.style.backgroundColor = "#d1d2cd";
-    resetButton.textContent = "Reiniciar colores";
-    messageDisplay.textContent = "";
-    for (let i = 0; i < squares.length; i += 1) {
-        if (colors[i]) {
-            squares[i].style.display = "block";
-            squares[i].style.backgroundColor = colors[i];
-        } else {
-            squares[i].style.display = "none";
-        }
-    }
-}
